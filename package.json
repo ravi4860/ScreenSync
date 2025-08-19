@@ -1,0 +1,35 @@
+{
+  "name": "screensync",
+  "version": "1.0.0",
+  "description": "A free open-source screen writing tool for filmmakers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravi4860/ScreenSync.git"
+  },
+  "keywords": [
+    "Screen",
+    "writing",
+    "film",
+    "making",
+    "writer",
+    "director",
+    "actor",
+    "cinema",
+    "story",
+    "telling",
+    "film",
+    "open-source",
+    "screenwriting",
+    "movies"
+  ],
+  "author": "ravichandraveeravalli",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ravi4860/ScreenSync/issues"
+  },
+  "homepage": "https://github.com/ravi4860/ScreenSync#readme"
+}
