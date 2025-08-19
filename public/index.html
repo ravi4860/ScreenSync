@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenSync - Professional Screenwriting Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">ScreenSync</h1>
+                <div class="header-controls">
+                    <input type="text" id="screenplay-title" placeholder="Enter screenplay title..." value="Untitled Screenplay">
+                    <button id="save-btn" class="btn btn-primary">Save as .fdx</button>
+                    <button id="export-btn" class="btn btn-secondary">Export PDF</button>
+                </div>
+            </div>
+        </header>
+
+        <div class="toolbar">
+            <div class="element-buttons">
+                <button class="element-btn active" data-element="action">Action</button>
+                <button class="element-btn" data-element="scene">Scene Heading</button>
+                <button class="element-btn" data-element="character">Character</button>
+                <button class="element-btn" data-element="dialogue">Dialogue</button>
+                <button class="element-btn" data-element="parenthetical">Parenthetical</button>
+                <button class="element-btn" data-element="transition">Transition</button>
+            </div>
+            <div class="format-info">
+                <span id="current-element">Action</span> | <span id="page-count">Page 1</span>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <div class="editor-container">
+                <div class="page-ruler">
+                    <div class="ruler-marks"></div>
+                </div>
+                <div class="editor-wrapper">
+                    <div id="editor" class="editor" contenteditable="true" spellcheck="true">
+                        <div class="line scene-heading">FADE IN:</div>
+                        <div class="line action">Start writing your screenplay here. Use the toolbar above to format different elements, or use keyboard shortcuts:</div>
+                        <div class="line action">- Tab: Indent to Character</div>
+                        <div class="line action">- Enter twice: New scene heading</div>
+                        <div class="line action">- Ctrl/Cmd + S: Save screenplay</div>
+                        <div class="line scene-heading">INT. EXAMPLE LOCATION - DAY</div>
+                        <div class="line action">This is an action line describing what happens in the scene.</div>
+                        <div class="line character">CHARACTER NAME</div>
+                        <div class="line dialogue">This is dialogue spoken by the character.</div>
+                        <div class="line parenthetical">(parenthetical direction)</div>
+                        <div class="line dialogue">More dialogue from the same character.</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="status-bar">
+                <span id="word-count">Words: 0</span>
+                <span id="char-count">Characters: 0</span>
+                <span id="save-status">Ready</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Save Modal -->
+    <div id="save-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Save Screenplay</h2>
+            <form id="save-form">
+                <div class="form-group">
+                    <label for="filename">Filename:</label>
+                    <input type="text" id="filename" name="filename" required>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancel-save">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save as Final Draft (.fdx)</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,383 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#screenplay-title {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #45a049;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+/* Toolbar */
+.toolbar {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.element-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.element-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.element-btn:hover {
+    background-color: #e9ecef;
+}
+
+.element-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.format-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    overflow: auto;
+}
+
+.editor-container {
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 8.5in;
+    width: 100%;
+    position: relative;
+}
+
+.page-ruler {
+    height: 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.ruler-marks::before {
+    content: '';
+    position: absolute;
+    left: 1.5in;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ccc;
+}
+
+.ruler-marks::after {
+    content: '';
+    position: absolute;
+    right: 1in;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ccc;
+}
+
+.editor-wrapper {
+    padding: 1in 1in 1in 1.5in;
+    min-height: 11in;
+    background-color: white;
+}
+
+.editor {
+    font-family: 'Courier Prime', 'Courier New', monospace;
+    font-size: 12pt;
+    line-height: 1.5;
+    color: #000;
+    outline: none;
+    min-height: 9in;
+}
+
+/* Screenplay formatting */
+.line {
+    margin: 0;
+    padding: 0;
+    min-height: 1.5em;
+    position: relative;
+}
+
+.line:empty::before {
+    content: '\00a0';
+}
+
+.scene-heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.action {
+    margin-bottom: 0.5em;
+    text-align: left;
+}
+
+.character {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 2.2in;
+    margin-top: 1em;
+    margin-bottom: 0.2em;
+    text-align: left;
+}
+
+.dialogue {
+    margin-left: 1in;
+    margin-right: 1.5in;
+    margin-bottom: 0.5em;
+}
+
+.parenthetical {
+    margin-left: 1.6in;
+    margin-right: 2in;
+    margin-bottom: 0.2em;
+    font-style: italic;
+}
+
+.transition {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* Footer */
+.footer {
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    padding: 0.5rem 2rem;
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+}
+
+.close:hover {
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .toolbar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .element-buttons {
+        flex-wrap: wrap;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+    
+    .editor-wrapper {
+        padding: 0.5in;
+    }
+    
+    .character {
+        margin-left: 1.5in;
+    }
+    
+    .dialogue {
+        margin-left: 0.5in;
+        margin-right: 1in;
+    }
+    
+    .parenthetical {
+        margin-left: 1in;
+        margin-right: 1.2in;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header, .toolbar, .footer {
+        display: none;
+    }
+    
+    .main-content {
+        padding: 0;
+    }
+    
+    .editor-container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+    }
+    
+    .page-ruler {
+        display: none;
+    }
+    
+    .editor-wrapper {
+        padding: 1in;
+    }
+}

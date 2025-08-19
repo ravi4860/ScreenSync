@@ -4,7 +4,21 @@
   "description": "A free open-source screen writing tool for filmmakers.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^4.18.2",
+    "express-session": "^1.18.2",
+    "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   },
   "repository": {
     "type": "git",
